@@ -1,2 +1,2 @@
-tup=(10)
+tup = 10
 print(tup)
