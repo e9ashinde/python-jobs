@@ -20,14 +20,8 @@ class CoreModel(models.Model):
     objects = CoreManager()
     all_objects = models.Manager()
 
-    dtm_created = models.DateTimeField(
-        verbose_name='DTM Created',
-        auto_now_add=True
-    )
-    dtm_updated = models.DateTimeField(
-        verbose_name='DTM Updated',
-        auto_now=True
-    )
+    dtm_created = models.DateTimeField(verbose_name="DTM Created", auto_now_add=True)
+    dtm_updated = models.DateTimeField(verbose_name="DTM Updated", auto_now=True)
 
     class Meta:
         abstract = True
@@ -40,10 +34,10 @@ class CoreModel(models.Model):
 
     @classmethod
     def initdata(cls):
-        print('{}.initdata()'.format(cls.__name__))
+        print("{}.initdata()".format(cls.__name__))
 
     def to_dict(self):
-        return model_to_dict(self, exclude=['id', 'dtm_created', 'dtm_updated'])
+        return model_to_dict(self, exclude=["id", "dtm_created", "dtm_updated"])
 
     @classmethod
     def get_dict(cls, pk):
@@ -52,12 +46,15 @@ class CoreModel(models.Model):
 
 
 class CoreModelAdmin(admin.ModelAdmin):
-    list_display = ('dtm_created', 'dtm_updated',)
-    list_filter = (
-        ('dtm_created', DateRangeFilter),
-        ('dtm_updated', DateRangeFilter)
+    list_display = (
+        "dtm_created",
+        "dtm_updated",
     )
-    readonly_fields = ('dtm_created', 'dtm_updated',)
+    list_filter = (("dtm_created", DateRangeFilter), ("dtm_updated", DateRangeFilter))
+    readonly_fields = (
+        "dtm_created",
+        "dtm_updated",
+    )
 
     list_per_page = 50
     show_full_result_count = False
@@ -121,13 +118,20 @@ class CoreModelPlus(CoreModel):
 
 
 class CoreModelPlusAdmin(admin.ModelAdmin):
-    list_display = ('is_deleted', 'dtm_created', 'dtm_updated',)
-    list_filter = (
-        'is_deleted',
-        ('dtm_created', DateRangeFilter),
-        ('dtm_updated', DateRangeFilter)
+    list_display = (
+        "is_deleted",
+        "dtm_created",
+        "dtm_updated",
     )
-    readonly_fields = ('dtm_created', 'dtm_updated',)
+    list_filter = (
+        "is_deleted",
+        ("dtm_created", DateRangeFilter),
+        ("dtm_updated", DateRangeFilter),
+    )
+    readonly_fields = (
+        "dtm_created",
+        "dtm_updated",
+    )
 
     list_per_page = 50
     show_full_result_count = False

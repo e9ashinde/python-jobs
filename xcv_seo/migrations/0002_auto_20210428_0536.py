@@ -7,42 +7,62 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('xcv_seo', '0001_initial'),
+        ("xcv_seo", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='seopage',
-            name='dtm_created',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now, verbose_name='DTM Created'),
+            model_name="seopage",
+            name="dtm_created",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                default=django.utils.timezone.now,
+                verbose_name="DTM Created",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='seopage',
-            name='dtm_updated',
-            field=models.DateTimeField(auto_now=True, default=django.utils.timezone.now, verbose_name='DTM Updated'),
+            model_name="seopage",
+            name="dtm_updated",
+            field=models.DateTimeField(
+                auto_now=True,
+                default=django.utils.timezone.now,
+                verbose_name="DTM Updated",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='seopage',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="seopage",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='seosite',
-            name='dtm_created',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now, verbose_name='DTM Created'),
+            model_name="seosite",
+            name="dtm_created",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                default=django.utils.timezone.now,
+                verbose_name="DTM Created",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='seosite',
-            name='dtm_updated',
-            field=models.DateTimeField(auto_now=True, default=django.utils.timezone.now, verbose_name='DTM Updated'),
+            model_name="seosite",
+            name="dtm_updated",
+            field=models.DateTimeField(
+                auto_now=True,
+                default=django.utils.timezone.now,
+                verbose_name="DTM Updated",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='seosite',
-            name='id',
-            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="seosite",
+            name="id",
+            field=models.BigAutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
     ]

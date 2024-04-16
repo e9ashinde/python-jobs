@@ -6,7 +6,7 @@ from xcv_core.models import CoreModel, default_null_blank
 class SEOModel(CoreModel):
     class Meta:
         abstract = True
-        app_label = 'seo'
+        app_label = "seo"
 
 
 class SEOSite(SEOModel):
@@ -17,9 +17,9 @@ class SEOSite(SEOModel):
     twitter = models.CharField(max_length=16, **default_null_blank)
 
     class Meta:
-        db_table = 'seo_site'
-        verbose_name = 'Site Data'
-        verbose_name_plural = 'Site Data'
+        db_table = "seo_site"
+        verbose_name = "Site Data"
+        verbose_name_plural = "Site Data"
 
 
 class SEOPage(SEOModel):
@@ -31,6 +31,6 @@ class SEOPage(SEOModel):
     keywords = models.CharField(max_length=512, **default_null_blank)
 
     class Meta:
-        db_table = 'seo_page'
-        verbose_name = 'Page Data'
-        verbose_name_plural = 'Page Data'
+        db_table = "seo_page"
+        verbose_name = "Page Data"
+        verbose_name_plural = "Page Data"

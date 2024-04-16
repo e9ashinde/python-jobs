@@ -22,13 +22,13 @@ def strip(value, stripchar):
 
 @register.filter(name="addstr")
 def addstr(a, b):
-    return '{}_{}'.format(a, b)
+    return "{}_{}".format(a, b)
 
 
 # https://stackoverflow.com/a/36288962/
 @register.simple_tag(takes_context=True)
 def url_replace(context, **kwargs):
-    query = context['request'].GET.copy()
+    query = context["request"].GET.copy()
     [query.pop(kwarg) for kwarg in kwargs if kwarg in query]
     query.update(kwargs)
     return urlencode(query)
@@ -37,7 +37,7 @@ def url_replace(context, **kwargs):
 # https://stackoverflow.com/a/50630001/
 @register.tag
 def lineless(parser, token):
-    nodelist = parser.parse(('endlineless',))
+    nodelist = parser.parse(("endlineless",))
     parser.delete_first_token()
     return LinelessNode(nodelist)
 
@@ -48,8 +48,8 @@ class LinelessNode(template.Node):
 
     def render(self, context):
         input_str = self.nodelist.render(context)
-        output_str = ''
+        output_str = ""
         for line in input_str.splitlines():
             if line.strip():
-                output_str = '\n'.join((output_str, line))
+                output_str = "\n".join((output_str, line))
         return output_str

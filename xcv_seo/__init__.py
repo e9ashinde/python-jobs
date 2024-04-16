@@ -1,1 +1,1 @@
-default_app_config = 'xcv_seo.apps.SEOConfig'
+default_app_config = "xcv_seo.apps.SEOConfig"
