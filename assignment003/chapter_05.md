@@ -39,6 +39,10 @@ The list data type has some more methods.
                       In place of reverse function we can use lst[::-1].
 
 
+**Using list as queues:**
+
+        It is also possible to use a list as a queue, where the first element added is the first element retrieved (“first-in, first-out”).
+        we can import deque by using from collections import deque
 
 **List Comprehension:** It is concise way to create a list.
 
@@ -63,3 +67,5 @@ The list data type has some more methods.
 
          if we want keys then use d.keys()
          for values use d.values()
+
+**Set:**  It is an unordered collection of unique elements.
